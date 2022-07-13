@@ -33,7 +33,7 @@
   <p align="center">
     Reccomendation Interactive Chatbox
     <br />
-    <a href="https://github.com/willjones11/SofwareEngineering"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/willjones11/SoftwareEngineering"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/willjones11/SoftwareEngineering/issues">Report Bug</a>
