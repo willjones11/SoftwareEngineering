@@ -17,9 +17,8 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-<p align="center">
-  [![Contributors][contributors-shield]][contributors-url]
-</p>
+
+
 
 
 <!-- PROJECT LOGO -->
@@ -81,6 +80,7 @@ Are you indecisive? Or are you looking to spice up your life with a new recipe? 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Team
+  [![Contributors][contributors-shield]][contributors-url]
 * William Floyd Jones 
 * Aida Ali Mumin
 * Samuel Meludu
