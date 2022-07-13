@@ -108,7 +108,6 @@ To get started the product is currently hosted on the Heroku cloud service. Howe
 First you need to download python it, you can download it by going to the <a href="https://www.python.org/downloads/windows/">release pages</a>. Then following the installer prompts.
 
 The main package needed is flask you can download it using the following command
-* npm
   ```sh
     pip install Flask
   ```
