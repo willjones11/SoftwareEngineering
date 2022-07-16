@@ -53,10 +53,13 @@ def start(self):
     print("Hello,  ",  self.name ) #responds 
     ans = input("Are we looking for Breakfast, Lunch, Dinner, or Dessert?") #interaction to narrow down the list of questions to ask 
     self.Input.append(ans)
+    #if the user wants breakfast it takes him to breakfast function
     if self.Input[0] == "Breakfast":
         breakfast()
+    #if the user wants Lunch or Dinner it takes him to the dunch function 
     elif self.Input[0] == "Lunch" | self.Input == "Dinner":
         dunch()
+    #if the user wants Dessert it takes dessert()
     elif self.Input[0] == "Dessert":
         dessert()
 
@@ -64,6 +67,7 @@ def start(self):
 def breakfast(self):
     #checks for allergies 
     print("Any food allegries or food to avoid")
+    
     x = input()
     checker(x)
     ans = input("Do you want sweet or savory meal?")
@@ -76,8 +80,8 @@ def breakfast(self):
             if an == "result":
                 break
             print(self.QuesB[1][i])
-            ans = input().split()
-            self.Input.extend(ans)
+            an = an.split()
+            self.Input.extend(an)
 
         
     if ans == "sweet":
@@ -87,9 +91,9 @@ def breakfast(self):
             #if user wants to see their food answer from ric-bot
             if an == "result":
                 break
-            print(self.QuesB[0][i])
-            ans = input().split()
-            self.Input.extend(ans)
+           
+            an = an.split()
+            self.Input.extend(an)
     
     end()
 
@@ -98,6 +102,7 @@ def dunch(self):
      #checks for allergies 
     print("Any food allegries or food to avoid?")
     x = input()
+    #TODO: Check if user says no and continue 
     checker(x)
     ans = input("Do you want sweet or savory meal?")
     self.Input.append(ans)
@@ -108,9 +113,8 @@ def dunch(self):
             #if user wants to see their food answer from ric-bot
             if an == "result":
                 break
-            print(self.QuesL[1][i])
-            ans = input().split()
-            self.Input.extend(ans)
+            an = an.split()
+            self.Input.extend(an)
 
         
     if ans == "sweet":
@@ -120,9 +124,8 @@ def dunch(self):
             #if user wants to see their food answer from ric-bot
             if an == "result":
                 break
-            print(self.QuesL[0][i])
-            ans = input().split()
-            self.Input.extend(ans)
+            an = an.split()
+            self.Input.extend(an)
     end()
 
 app.route('/dessert', methods=['GET', 'POST'])
@@ -137,9 +140,8 @@ def dessert(self):
         #if user wants to see their food answer from ric-bot
         if an == "result":
             break
-        print(self.QuesB[0][i])
-        ans = input().split()
-        self.Input.extend(ans)
+        an = an.split()
+        self.Input.extend(an)
     end()
 
 
