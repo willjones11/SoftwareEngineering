@@ -10,7 +10,7 @@
     #Do you want fruit? fruit -fruit 
     #Are you wanting a certian cusine? input
     #Do you want soup? soup -soup
-    #Would you like a sandwhich? sandwhich -sandwhich
+    #Would you like a sandwich? sandwich -sandwich
     
 
 #### TO DO and POSSIBLE THOUGHTS
@@ -34,8 +34,9 @@ socketio = SocketIO(app)
 def _init_(self, name, Input):
     self.name = None
     self.Input = [] #client input 
-    self.QuesB = [[""],[""]] #[0]= sweet [1]=savory #Breakfast
-    self.QuesL = [[""],[""]] #Lunch and Dinner
+    self.QuesB = [["Do you want a certain cuisine?", "Do you want fruit in your dish?", "Pancakes?", "Waffles?", "Do you want chocolate in your dish?"], ["Do you want a certain cuisine?", "Do you want meat in your dish?", "Do you want a sandwich-like dish? (Sausage biscuit, bagel sandwich)", "Do you want eggs?",
+     "Do you want vegetables?"]] #[0]= sweet [1]=savory #Breakfast
+    self.QuesL = [["Do you want a certain cuisine?", "Would you like a salad?" "Would you like a sandwich?", "Do you want a rice dish?", "Do you want a soup dish?", "Do you want a noodle dish?", "Do you want vegetables?", "Do you want meat?"], ["Do you want a certain cuisine?", "Do you want a rice dish?", "Do you want a soup dish?", "Do you want a noodle dish?", "Do you want vegetables?", "Do you want meat?"]] #Lunch and Dinner
     self.QuesD = [] #Dessert
 #starting the chatbox
 @app.route('/', methods=['GET"'])
@@ -95,7 +96,7 @@ def breakfast(self):
 @app.route('/dunch', methods=['GET', 'POST'])
 def dunch(self):
      #checks for allergies 
-    print("Any food allegries or food to avoid")
+    print("Any food allegries or food to avoid?")
     x = input()
     checker(x)
     ans = input("Do you want sweet or savory meal?")
