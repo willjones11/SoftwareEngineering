@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="Logo_2.png">
+  <title>RIC-Bot</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.catbtn {
+  background-color: #009933;
+  color: white;
+  padding: 11px;
+  font-size:11px;
+  border: none;
+}
+
+.Category {
+  position: fixed;
+  display: inline-block;
+}
+
+.Category-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 110px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.Category-content a {
+  color: black;
+  padding: 5px 7px;
+  text-decoration: none;
+  display: flex;
+}
+
+.Category-content a:hover {background-color: #ddd;}
+
+.Category:hover .Category-content {display: block;}
+
+.Category:hover .catbtn {background-color: #3e8e41;}
+</style>
+</head>
+<body>
+
+<h1 style = "text-align: center;color:green;font-style: italic;"> RIC-Bot</h1>
+<p style="color:green;">
+  This online robot will give you suggestions after you select the category and provide input,
+  <br>in order to search please selected category from the drop down menu and enter your 
+  <br>query on the next page.
+  <br>
+
+  <img src = "k.jpg" style = "width:100px;height:100px;">
+</p>
+
+   <body>
+      <div style = "position:fixed; left:700px; top:20px; ">
+          <img src="Logo_2.png"  style ="width:600px;height:500px;"> 
+      </div>
+   </body>
+<p style="color:green;">Select the category below first</p>
+
+<div class="Category">
+  <button class="catbtn">Select Categories</button>
+  <div class="Category-content">
+
+    <a href="https://www.youtube.com/results?search_query=foods">Food</a>
+    <a href="https://www.youtube.com/results?search_query=Resturants">Resturants</a>
+    <a href="https://www.youtube.com/results?search_query=Groceries">Groceries</a>
+    <a href="https://www.youtube.com/results?search_query=colleges+in+atlanta">schools</a>
+
+  </div>
+</div>
+
+</body>
+</html>
