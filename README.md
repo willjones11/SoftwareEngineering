@@ -120,7 +120,7 @@ The main package needed is flask you can download it using the following command
 ## Roadmap
 
 - [X] Determine Chatbox host
-- [ ] Design Algorithm for Chatbox
+- [X] Design Algorithm for Chatbox
 - [ ] Design Website Design
 - [ ] Create Launch Button
 - [ ] Add Support Section
