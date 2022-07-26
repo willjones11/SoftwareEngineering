@@ -34,10 +34,8 @@ socketio = SocketIO(app)
 def _init_(self, name, Input):
     self.name = None
     self.Input = [] #client input 
-    self.QuesB = [["Do you want a certain cuisine?", "Do you want fruit in your dish?", "Pancakes?", "Waffles?", "Do you want chocolate in your dish?"], ["Do you want a certain cuisine?", "Do you want meat in your dish?", "Do you want a sandwich-like dish? (Sausage biscuit, bagel sandwich)", "Do you want eggs?",
-     "Do you want vegetables?"]] #[0]= sweet [1]=savory #Breakfast
-    self.QuesL = [["Do you want a certain cuisine?", "Would you like a salad?" "Would you like a sandwich?", "Do you want a rice dish?", "Do you want a soup dish?", "Do you want a noodle dish?", "Do you want vegetables?", "Do you want meat?"], ["Do you want a certain cuisine?", "Do you want a rice dish?", "Do you want a soup dish?", "Do you want a noodle dish?", "Do you want vegetables?", "Do you want meat?"]] #Lunch and Dinner
-    self.QuesD = [] #Dessert
+    self.Ques = [["Panckes or waffles?", "What fruit would you want?", "Would you want a cake or cupcakes?",  "What spices do you want to use?", "Do you want the dish cold or hot?"  ], [ "What meat do you want in your dish?", "Do you want a sandwich-like dish? (Sausage biscuit, bagel sandwich)", "What spices do you want to use?",
+     "Do you want vegetables?", "Do you want your dish cold or hot?"]] #[0]= sweet [1]=savory
 #starting the chatbox
 @app.route('/', methods=['GET"'])
 def startup():
@@ -51,97 +49,42 @@ def start(self):
     #self.name  = request.args.get('username')
     #self.Input = request.args.get('choice')
     print("Hello,  ",  self.name ) #responds 
-    ans = input("Are we looking for Breakfast, Lunch, Dinner, or Dessert?") #interaction to narrow down the list of questions to ask 
-    self.Input.append(ans)
-    #if the user wants breakfast it takes him to breakfast function
-    if self.Input[0] == "Breakfast":
-        breakfast()
-    #if the user wants Lunch or Dinner it takes him to the dunch function 
-    elif self.Input[0] == "Lunch" | self.Input == "Dinner":
-        dunch()
-    #if the user wants Dessert it takes dessert()
-    elif self.Input[0] == "Dessert":
-        dessert()
+    ans = input("Are we looking for Breakfast, Lunch, Dinner, or Dessert?") #interaction to start what type of meal client is looking for 
+    self.Input.append(ans)# adds answer to list of client inputs
+    interact() #calls interact function to begin conversation 
 
-@app.route('/breakfast', methods=['GET', 'POST'])
-def breakfast(self):
+@app.route('/', methods=['GET', 'POST'])
+def interact(self):
     #checks for allergies 
     print("Any food allegries or food to avoid")
-    
     x = input()
-    checker(x)
+    checker(x) #calls function to check answer
     ans = input("Do you want sweet or savory meal?")
     self.Input.append(ans)
     if ans == "savory":
-        for i in range(0, len(self.QuesB[1][1:])):
-            print(self.QuesB[1][i])
+        for i in range(0, len(self.Ques[1][1:])):
+            print(self.Ques[1][i])
             an = input()
             #if user wants to see their food answer from ric-bot
             if an == "result":
                 break
-            print(self.QuesB[1][i])
-            an = an.split()
+            elif an == "none":
+                continue
             self.Input.extend(an)
 
         
     if ans == "sweet":
-        for i in range(0, len(self.QuesB[0][1:])):
-            print(self.QuesB[0][i])
+        for i in range(0, len(self.Ques[0][1:])):
+            print(self.Ques[0][i])
             an = input()
             #if user wants to see their food answer from ric-bot
             if an == "result":
                 break
-           
+            if an == "none":
+                continue
             an = an.split()
             self.Input.extend(an)
     
-    end()
-
-@app.route('/dunch', methods=['GET', 'POST'])
-def dunch(self):
-     #checks for allergies 
-    print("Any food allegries or food to avoid?")
-    x = input()
-    #TODO: Check if user says no and continue 
-    checker(x)
-    ans = input("Do you want sweet or savory meal?")
-    self.Input.append(ans)
-    if ans == "savory":
-        for i in range(0, len(self.QuesL[1][1:])):
-            print(self.QuesL[1][i])
-            an = input()
-            #if user wants to see their food answer from ric-bot
-            if an == "result":
-                break
-            an = an.split()
-            self.Input.extend(an)
-
-        
-    if ans == "sweet":
-        for i in range(0, len(self.QuesL[0][1:])):
-            print(self.QuesL[0][i])
-            an = input()
-            #if user wants to see their food answer from ric-bot
-            if an == "result":
-                break
-            an = an.split()
-            self.Input.extend(an)
-    end()
-
-app.route('/dessert', methods=['GET', 'POST'])
-def dessert(self):
-     #checks for allergies 
-    print("Any food allegries or food to avoid")
-    x = input()
-    checker(x)
-    for i in range(0, len(self.QuesB[0][1:])):
-        print(self.QuesB[0][i])
-        an = input()
-        #if user wants to see their food answer from ric-bot
-        if an == "result":
-            break
-        an = an.split()
-        self.Input.extend(an)
     end()
 
 
