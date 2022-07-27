@@ -38,9 +38,9 @@ def _init_(self, name, Input):
     self.Ques = [["Panckes or waffles?", "What fruit would you want?", "Would you want a cake or cupcakes?",  "What spices do you want to use?", "Do you want the dish cold or hot?"  ], [ "What meat do you want in your dish?", "Do you want a sandwich-like dish? (Sausage biscuit, bagel sandwich)", "What spices do you want to use?",
      "Do you want vegetables?", "Do you want your dish cold or hot?"]] #[0]= sweet [1]=savory
 #starting the chatbox
-@app.route('/', methods=['GET"'])
+@app.route('/')
 def startup():
-    return render_template('index.html') #after pressing button to start chatbox it loads the html page of the chatbox
+    return render_template('ric-bot.html') #after pressing button to start chatbox it loads the html page of the chatbox
 
 #start of the interaction 
 @app.route('/introduce', methods=['GET', 'POST'])
@@ -117,4 +117,4 @@ def end(self):
     print("Have a good day")
     
 if __name__ == '__main__':
-    app.run(app, debug=True)
+    socketio.run(app)
