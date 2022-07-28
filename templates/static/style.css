@@ -1,0 +1,157 @@
+/*The RIC BOT header*/
+h1 {
+	display: inline-block;
+	color: white;
+	font-size: 4em;
+	margin: 0;
+	padding: 14px;
+  }
+  /*Helps create where the the columns of img/instructions and Chatbox*/
+  .float-child{
+  display: inline-block;
+  padding: 1rem 1rem;
+  width:47%;
+  }
+  /*for the ric bot image */
+  img{
+  
+  margin-top:10px;
+  margin-left:2%;
+  Height:627px;
+  width: 50%;
+  border-radius:10px;
+  }
+  /*For the instruction section of the code*/
+  .instruction{
+  flex-direction: column;
+  height: 90%;
+  background-color: white;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+  }
+  /*List section of instruction*/
+  ul {
+  font-size:20px;
+  }
+  /*Header for the instructions*/
+  header{
+	display: inline-block;
+	text-decoration: underline;
+	font-size: 3em;
+	margin: 0;
+	padding: 14px;
+  }
+  /*box part of the chatbox outline*/
+  #chatbox {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	Height:800px;
+	margin-top: 60px;
+  }
+  /*in chatbox the user input on right side alignment*/
+  #userInput {
+	margin-left:auto;
+	width: 49%;
+	margin-top: -70px;
+	
+  }
+  /*Text for the space for user input*/
+  #textInput {
+	width: 90%;
+	border: none;
+	font-family: serif;
+	font-size: 17px;
+	margin-right: 80px;
+  }
+  /*User Text in the user input for chatbox*/
+  .userText {
+	color: black;
+	font-family: sans-serif;
+	font-size: 17px;
+	text-align: right;
+	line-height: 30px;
+  }
+	/*Boxing around the User Text*/
+  .userText span {
+	display: inline-block;
+	background-color: #4CC417;
+	padding: 10px;
+	border-radius: 20px;
+  }
+  /*text for the bot in the chatbox*/
+  .botText {
+	color: black;
+	font-family: serif;
+	font-size: 17px;
+	text-align: left;
+	line-height: 30px;
+  }
+  /*boxing in the bot in the chatbox*/
+  .botText span {
+	display: inline-block;
+	background-color: #306EFF;
+	padding: 10px;
+	border-radius: 20px;
+  }
+  /*container for the img chatbox and intructions*/
+  .boxed {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	margin-top: 60px;
+  }
+  /*container for the messages in the chatbox*/
+  .messages {
+  flex-direction: column;
+  overflow: scroll;
+  height: 90%;
+  background-color: white;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+  }
+  
+  
+  
+  html {
+  height: 100%;
+  
+  }
+  /* for the body text  */
+  body {
+  font-family: serif;
+  /*background image ensuring it completly fills full page*/
+  background-image: url("imgs/background.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  height: 100%;
+  margin: 0;
+  }
+  
+  /*The Restart Button*/
+  .button{
+	border: 0; 
+	padding: 15px; 
+	margin-left: auto;
+	border-radius: 10px; 
+	display: right;
+  }
+  
+  /*Styling for the box containing user input*/
+  input { 
+  border: 0; 
+  padding: 15px; 
+  margin-left: auto;
+  border-radius: 10px; 
+  display: right;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
