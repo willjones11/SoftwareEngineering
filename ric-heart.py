@@ -115,9 +115,6 @@ def get_bot_response():
     if len(Input) == 0:
         botResponse = checker(userText)
 
-    elif userText == "results":
-        flask.redirect(flask.url_for("home"))
-
     #for most quesitons open ended and yes/no
     else:
         botResponse = interact(userText)
