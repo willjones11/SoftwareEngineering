@@ -120,11 +120,11 @@ The main package needed is flask you can download it using the following command
 ## Roadmap
 
 - [X] Determine Chatbox host
-- [ ] Design Algorithm for Chatbox
-- [ ] Design Website Design
-- [ ] Create Launch Button
+- [X] Design Algorithm for Chatbox
+- [X] Design Website Design
+- [X] Create Launch Button
 - [ ] Add Support Section
-- [ ] Add Restart Function to Chatbox 
+- [X] Add Restart Function to Chatbox 
 - [ ] Determine if RIC-BOT can handle bad input
 
 <p align="right">(<a href="#top">back to top</a>)</p>
