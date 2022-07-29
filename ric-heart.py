@@ -8,18 +8,7 @@ app = Flask(__name__, template_folder='templates', static_folder='templates/stat
 
 Input = [] #user input 
 #Question bank for RIC-BOT
-Ques = [
-    "Panckes or waffles?",
-    "What fruit would you want?",
-    "What meat would you like?",  
-    "In the dish, do you want sugar?",
-    "Do you want the dish to be keto?", 
-    "What vegtables would you like?", 
-    "Do  you want a sandwhich?", 
-    "Do you want soup?",  
-    "Do you want the dish cold or hot?", 
-    "Would you like soup or sandwhich", 
-    ]
+Ques = {}
 
 
 
@@ -46,7 +35,7 @@ def checker(x):
     for i in ch:
         
         #if the user has allergies applying the correct 
-        if  i == "gluten" or i == "shellfish" or i == "peanut" or i == "dairy":
+        if  i == "gluten" or i == "shellfish" or i == "nut" or i == "dairy":
             Input.append(i + "-free")
         
         #Uwanted Ingredients
@@ -102,7 +91,7 @@ def results():
     #Convert list to String
     query = ' '.join(Input) + ' recipe'
     #print out the google search result
-    r = search(query, num_results=1)
+    r = search(query, num=1, stop=1, pause=1)#trys to extract first result
     ans = str(list(r)[0])
     return ans
     
@@ -115,7 +104,26 @@ def index():
 #loads Chat box hosted second page. This is done when  button is pressed on the launch page
 @app.route("/chat")
 def home(): 
-	return render_template("ric-bot.html")
+    Input.clear() #making sure no user inputs from previous state
+    Ques.clear() #making sure no left over questions from previous state
+    Ques.extend([
+    "Pancakes or waffles?",
+    "What fruit would you want?",
+    "What meat would you like?",  
+    "In the dish, do you want sugar?",
+    "Do you want the dish to be keto?", 
+    "What vegetables would you like?", 
+    "Do you want a sandwhich?", 
+    "Do you want soup?",  
+    "Do you want the dish to be cold or hot?", 
+    "What type of cusine would you like> ex. Tex-Mex, Asian or type no for no preference", 
+    "Do you want your meal to be organic", 
+    "What type of oil would you like to use in the dish? answer as typeoil where type is the oil you want", 
+    "Would you want this made in the oven, microwave, stove, grill , crock-pot, or air-fryer", 
+    "Would you want your meal to be mild, spicy, or bland", 
+    "Would you want the dish to be sweet or savory"
+    ])
+    return render_template("ric-bot.html")
 
 
 #Function for interaction between javascript in ric-bot.html and other functions in the python code
