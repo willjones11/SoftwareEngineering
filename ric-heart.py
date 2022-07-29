@@ -103,7 +103,7 @@ def index():
 @app.route("/chat")
 def home(): 
 	Input.clear() #for when user restarts makes sure the inputs are clear
-	Ques.append("Panckes or waffles?",
+	Ques.extend(["Panckes or waffles?",
     "What fruit would you want?",
     "What meat would you like?",  
     "In the dish, do you want sugar?",
@@ -116,7 +116,9 @@ def home():
     "Do you want your meal to be organic?", 
     "What type of oil would you like to use in the dish? answer as typeoil where type is the oil you want", 
     "Would you want this made in the oven, microwave, stove, crock-pot or air-fryer?", 
-    "Would do you want a sweet, mild, spicy, or bland dish?")
+    "Would do you want a sweet, mild, spicy, or bland dish?"
+		    ]
+		   )
 	return render_template("ric-bot.html")
 
 
