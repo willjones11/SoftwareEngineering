@@ -1,10 +1,10 @@
 /*The RIC BOT header*/
-h1 {
-	display: inline-block;
-	color: white;
-	font-size: 4em;
-	margin: 0;
-	padding: 14px;
+  h1 {
+	text-align: center;
+    	color: white;
+   	font-style: italic;
+    	background-color: aquamarine;
+    	font-size: 70px;
   }
   /*Helps create where the the columns of img/instructions and Chatbox*/
   .float-child{
@@ -17,7 +17,7 @@ h1 {
   
   margin-top:10px;
   margin-left:2%;
-  Height:627px;
+  Height:50%;
   width: 50%;
   border-radius:10px;
   }
@@ -47,7 +47,7 @@ h1 {
 	margin-left: auto;
 	margin-right: auto;
 	width: 90%;
-	Height:800px;
+	Height:700px;
 	margin-top: 60px;
   }
   /*in chatbox the user input on right side alignment*/
@@ -119,26 +119,37 @@ h1 {
   height: 100%;
   
   }
-  /* for the body text  */
+  /*for body text creates the font style and gradient animation background*/
   body {
-  font-family: serif;
-  /*background image ensuring it completly fills full page*/
-  background-image: url("imgs/background.jpg");
-  background-repeat:no-repeat;
-  background-size:cover;
-  height: 100%;
-  margin: 0;
-  }
-  
+        font-family: serif;
+	background: linear-gradient(-45deg, #5a3f37, #5a3f37, #2c7744, #2c7744);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100%;
+   }
+   /*positioning transisitions of colors*/
+   @keyframes gradient {
+ 	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
   /*The Restart Button*/
-  .button{
-	border: 0; 
-	padding: 15px; 
+  button{
+        font-size: 15px;
+	padding: 13px; 
+        margin-top: 10px;
 	margin-left: auto;
 	border-radius: 10px; 
 	display: right;
   }
-  
+
   /*Styling for the box containing user input*/
   input { 
   border: 0; 
@@ -147,10 +158,6 @@ h1 {
   border-radius: 10px; 
   display: right;
   }
-  
-  
-  
-  
   
   
   
