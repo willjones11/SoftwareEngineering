@@ -1,10 +1,10 @@
 /*The RIC BOT header*/
-h1 {
-	display: inline-block;
-	color: white;
-	font-size: 4em;
-	margin: 0;
-	padding: 14px;
+  h1 {
+	text-align: center;
+    	color: white;
+   	font-style: italic;
+    	background-color: aquamarine;
+    	font-size: 40px;
   }
   /*Helps create where the the columns of img/instructions and Chatbox*/
   .float-child{
