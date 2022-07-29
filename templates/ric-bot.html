@@ -19,7 +19,11 @@
   <div class="boxed">
   <div>
      <div class="float-child">
-       <center><img src="{{ url_for('imgs', filename='Logo_2.png') }}" atl="Logo" width="100" height="200"></center>
+       <center>
+         <div id="img">
+            <link rel="icon" href="{{ url_for('static', filename='Logo_2.png') }}"width="100" height="200">
+         </div>
+        </center>
         <div class="instruction">
           <center><header>Intructions</header></center>
           <ul>
