@@ -8,7 +8,18 @@ app = Flask(__name__, template_folder='templates', static_folder='templates/stat
 
 Input = [] #user input 
 #Question bank for RIC-BOT
-Ques = []
+Ques = [
+    "Panckes or waffles?",
+    "What fruit would you want?",
+    "What meat would you like?",  
+    "In the dish, do you want sugar?",
+    "Do you want the dish to be keto?", 
+    "What vegtables would you like?", 
+    "Do  you want a sandwhich?", 
+    "Do you want soup?",  
+    "Do you want the dish cold or hot?", 
+    "Would you like soup or sandwhich", 
+    ]
 
 
 
@@ -35,7 +46,7 @@ def checker(x):
     for i in ch:
         
         #if the user has allergies applying the correct 
-        if  i == "gluten" or i == "shellfish" or i == "nut" or i == "dairy":
+        if  i == "gluten" or i == "shellfish" or i == "peanut" or i == "dairy":
             Input.append(i + "-free")
         
         #Uwanted Ingredients
@@ -63,11 +74,12 @@ def interact(userText):
     
     #if the user wants the keyword that is asked in the question 
     elif userText == "yes":
-    	userText[:-1] #gets rid of the ? at end
-	keyword = userText.split() #seperates words out to get keyword at end
-	Input.append(keyword[-1])#adding to list
-	botResponse = Ques[0] #next question for ricbot
-	Ques.pop(0) #deletes used question
+        userText[:-1] #gets rid of the ? at end
+        keyword = userText.split() #seperates words out to get keyword at end
+        Input.append(keyword[-1])#adding to list
+        botResponse = Ques[0] #next question for ricbot
+        Ques.pop(0) #deletes used question
+    
     #for questions with open ended responses usually allows for more keywords to be taken in than yes/no questions 
     else:
 
@@ -90,7 +102,7 @@ def results():
     #Convert list to String
     query = ' '.join(Input) + ' recipe'
     #print out the google search result
-    r = search(query, num=1, stop=1, pause=1) #trys to extract first result
+    r = search(query, num_results=1)
     ans = str(list(r)[0])
     return ans
     
@@ -103,24 +115,6 @@ def index():
 #loads Chat box hosted second page. This is done when  button is pressed on the launch page
 @app.route("/chat")
 def home(): 
-	Input.clear() #for when user restarts makes sure the inputs are clear
-	Ques.clear() #makes sure questions are cleared for restart
-	Ques.extend(["Panckes or waffles?",
-    "What fruit would you want?",
-    "What meat would you like?",  
-    "In the dish, do you want sugar?",
-    "Do you want the dish to be keto?", 
-    "What vegtables would you like?", 
-    "Do  you want a sandwhich?", 
-    "Do you want soup?",  
-    "Do you want the dish cold or hot?",
-    "What type of Cusine would you like?(ex. Tex-Mex, Asian, Italian, or type none for no preference)",
-    "Do you want your meal to be organic?", 
-    "What type of oil would you like to use in the dish? answer as typeoil where type is the oil you want", 
-    "Would you want this made in the oven, microwave, stove, crock-pot or air-fryer?", 
-    "Would do you want a sweet, mild, spicy, or bland dish?"
-		    ]
-		   )
 	return render_template("ric-bot.html")
 
 
