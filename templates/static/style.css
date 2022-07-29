@@ -141,14 +141,15 @@ h1 {
 }
 
   /*The Restart Button*/
-  .button{
-	border: 0; 
-	padding: 15px; 
+  button{
+        font-size: 15px;
+	padding: 13px; 
+        margin-top: 10px;
 	margin-left: auto;
 	border-radius: 10px; 
 	display: right;
   }
-  
+
   /*Styling for the box containing user input*/
   input { 
   border: 0; 
