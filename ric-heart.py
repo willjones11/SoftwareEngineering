@@ -103,6 +103,7 @@ def index():
 @app.route("/chat")
 def home(): 
 	Input.clear() #for when user restarts makes sure the inputs are clear
+	Ques.clear() #makes sure questions are cleared for restart
 	Ques.extend(["Panckes or waffles?",
     "What fruit would you want?",
     "What meat would you like?",  
