@@ -1,45 +1,91 @@
 <!DOCTYPE html>
+
 <html>
-<link rel="stylesheet" href="{{ url_for('static', filename='StyleSheet.css') }}"/>
+<title>RIC-BOT</title>
 
 <head>
-  <link rel="icon" href="{{ url_for('static', filename='Logo_2.png') }}">
-  <title>RIC-Bot - Welcome Page</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--background image-->
-<style>
-    h1 {
-          text-align: center;
-          text-transform: uppercase;
-          color: #FFFFFF;
-	      text-align: center;
-          font-size:5vw;
-        }
-</style>
-</head>
-
-<body>
-<center>
-
-	<div id="header"></div>
-       
-        <div>
-        <h1> RIC-Bot</h1>
-	</div>
- 
-
-        <div>
-        <a href = "{{ url_for('static', filename='Logo_2.png') }}"> 
-		<img src = "static/Logo_2.png" width="300" height="400"/>
-        </a> 
-        </div>
-	<h2>Welcome to RIC-BOT! It stands for Reccomendation Interactive Chatbox. His goal is to help find a recipe by asking you a series of  questions to better understand your wants and needs. Whether your a picky eater, too busy to hunt recipes, or looking to try something new RIC-BOT is here to help!</h2>
-	<div>
-        <a href="/chat">
-        <button class="catbtn-2">Launch RIC-Bot</button>
-        </a>
-	</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  
+  </head>
+  
+  <body>
+  <center>
+  <h1>
+  RIC-BOT
+  </h1>
+  </center>
     
-</center>	
-</body>
+  <div class="boxed">
+  <div>
+     <div class="float-child">
+       <center>
+            <a href = "{{ url_for('static', filename='Logo_2.png') }}"> 
+		            <img src = "static/Logo_2.png" width="100" height="150"/>
+            </a>
+        </center>
+        <div class="instruction">
+          <center><header>Instructions</header></center>
+          <ul>
+            <li>Answer questions with correct spelling</li>
+            <li>Some questions are in the form of open ended questions and some are in yes/no format</li>
+            <li>To make a list for the open ended qusetions, use spaces instead of commas and omit spaces between words of s single item. for example "garlic, salt, black pepper" would be " garlic salt blackpepper</li>
+	    <li>If you do not like any of the options asked you can skip it by by typing "no" or "none" </li>
+            <li>To see the results type "results"</li>
+            <li>To restart RIC-BOT press restart button</li>
+          </ul>
+        </div>
+     </div> 
+       <div class="float-child">
+       <div id="messages" class = "messages">
+  <div id="chatbox">
+  <p class="botText">
+  <span>Hello My Name is RIC-BOT, lets find you a recipe today! Do you have any Food Allergies or any ingredients you do not want in the dish?</span>
+  </p>
+  </div>
+        </div>
+    </div>
+  <div id="userInput">
+  <input id="textInput" type="text" name="msg" placeholder="Enter Response Here" />
+  	<a href="/">
+	  <button>Restart RIC-BOT By Pressing Here</button> 
+	</a>
+  </div>
+    
+  </div>
+  <script>
+          function getBotResponse() {
+            var rawText = $("#textInput").val();
+            var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+            $("#textInput").val("");
+            $("#chatbox").append(userHtml);
+            document
+              .getElementById("userInput")
+              .scrollIntoView({ block: "end", behavior: "smooth" });
+            $.get("/get", { msg: rawText }).done(function(data) {
+              var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+              $("#chatbox").append(botHtml);
+              document
+                .getElementById("userInput")
+                .scrollIntoView({ block: "start", behavior: "smooth" });            
+             const messageCont = document.getElementById("userInput")
+             messageCont.scrollTop = messageCont.scrollHeight - messageCont.clientHeight;
+
+            
+            });
+          }
+          $("#textInput").keypress(function(e) {
+            if (e.which == 13) {
+              getBotResponse();
+            }
+          });
+        </script>
+  </div>
+  </body>
+  
+  
+  
+  
+  
 </html>
