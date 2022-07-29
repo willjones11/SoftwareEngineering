@@ -46,7 +46,7 @@ def checker(x):
     for i in ch:
         
         #if the user has allergies applying the correct 
-        if  i == "gluten" or i == "shellfish" or i == "peanut" or i == "dairy":
+        if  i == "gluten" or i == "shellfish" or i == "nut" or i == "dairy":
             Input.append(i + "-free")
         
         #Uwanted Ingredients
@@ -100,7 +100,7 @@ def results():
     #Convert list to String
     query = ' '.join(Input) + ' recipe'
     #print out the google search result
-    r = search(query, num_results=1)
+    r = search(query, num=1, stop=1, pause=1) #trys to extract first result
     ans = str(list(r)[0])
     return ans
     
