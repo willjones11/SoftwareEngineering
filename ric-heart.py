@@ -66,7 +66,8 @@ def interact(userText):
             userText[:-1] #gets rid of the ? at end
             keyword = userText.split() #seperates words out to get keyword at end
             Input.append(keyword[-1])#adding to list
-
+	    botResponse = Ques[0] #next question for ricbot
+            Ques.pop(0) #deletes used question
     #for questions with open ended responses usually allows for more keywords to be taken in than yes/no questions 
     else:
 
