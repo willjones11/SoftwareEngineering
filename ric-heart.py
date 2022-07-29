@@ -63,9 +63,9 @@ def interact(userText):
     
     #if the user wants the keyword that is asked in the question 
     elif userText == "yes":
-            userText.partition[-1] #gets the last word in the list which is the keyword?
-            keyword = userText.substring(0, userText.length() - 1)# getting rid of ? from keyword
-            Input.append(keyword)#adding to list
+            userText[:-1] #gets rid of the ? at end
+            keyword = userText.split() #seperates words out to get keyword at end
+            Input.append(keyword[-1])#adding to list
 
     #for questions with open ended responses usually allows for more keywords to be taken in than yes/no questions 
     else:
