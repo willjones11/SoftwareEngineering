@@ -8,7 +8,7 @@ app = Flask(__name__, template_folder='templates', static_folder='templates/stat
 
 Input = [] #user input 
 #Question bank for RIC-BOT
-Ques = {}
+Ques = []
 
 
 
