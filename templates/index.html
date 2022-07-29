@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-<link href="StyleSheet.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='StyleSheet.css') }}"/>
 
 <head>
-  <link rel="icon" href="imgs/Logo_2.png">
+  <link rel="icon" href="{{ url_for('static', filename='Logo_2.png') }}"/>
   <title>RIC-Bot - Welcome Page</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--background image-->
 <style>
     h1 {
           text-align: center;
@@ -20,26 +19,29 @@
 </head>
 
 <body>
-
+<center> 
 
     <div id="header"></div>
-    <div id="banner"></div>
-    
-    <div style = "position:fixed; left:575px; ">
+    <div>
         <h1> RIC-Bot</h1>
     </div>
  
 
-    <div style = "position:fixed; left:570px; top:175px; ">
-        <img src="imgs/Logo_2.png"  style ="width:390px;height:390px;"> 
+    <div>
+        <a href = "{{ url_for('static', filename='Logo_2.png') }}">
+        <img src="static/Logo_2.png"  width="300" height="400"/> 
+        </a>
     </div>
-
-    <div style = "position:fixed; left:670px; top:575px; ">
-        <a href="ric-bot.html">
+    <h2>
+        Welcome to RIC-BOT! It stands for Reccomendation Interactive Chatbox. His goal is to help you find your next favorite dish by asking you a series of questions 
+        to better understand your wants and needs. Whether your a picky eater, too busy to hunt recipes, or looking to try something new RIC-BOT is here to help!
+    </h2>
+    <div>
+        <a href="/chat">
         <button class="catbtn-2">Launch RIC-Bot</button>
         </a>
     </div>
 	
-	
+</center>	
 </body>
 </html>
