@@ -17,7 +17,7 @@
   
   margin-top:10px;
   margin-left:2%;
-  Height:30%;
+  Height:50%;
   width: 50%;
   border-radius:10px;
   }
@@ -47,7 +47,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	width: 90%;
-	Height:800px;
+	Height:700px;
 	margin-top: 60px;
   }
   /*in chatbox the user input on right side alignment*/
@@ -158,6 +158,8 @@
   border-radius: 10px; 
   display: right;
   }
+  
+  
   
   
   
