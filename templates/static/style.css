@@ -123,7 +123,7 @@ h1 {
   body {
   font-family: serif;
   /*background image ensuring it completly fills full page*/
-  background-image: url("../imgs/background.jpg");
+  background-image: {{url_for('static', filename='background.jpeg') }};
   background-repeat:no-repeat;
   background-size:cover;
   height: 100%;
