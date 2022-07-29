@@ -8,22 +8,7 @@ app = Flask(__name__, template_folder='templates', static_folder='templates/stat
 
 Input = [] #user input 
 #Question bank for RIC-BOT
-Ques = [
-    "Panckes or waffles?",
-    "What fruit would you want?",
-    "What meat would you like?",  
-    "In the dish, do you want sugar?",
-    "Do you want the dish to be keto?", 
-    "What vegtables would you like?", 
-    "Do  you want a sandwhich?", 
-    "Do you want soup?",  
-    "Do you want the dish cold or hot?",
-    "Do what type of Cusine would you like?(ex. Tex-Mex, Asian, Italian)",
-    "Do you want your meal to be organic?", 
-    "What type of oil would you like to use in the dish? answer as typeoil where type is the oil you want", 
-    "Would you want this made in the oven, microwave, stove, crock-pot or air-fryer?", 
-    "Would do you want a sweet, mild, spicy, or bland dish?", 
-    ]
+Ques = []
 
 
 
@@ -117,6 +102,21 @@ def index():
 #loads Chat box hosted second page. This is done when  button is pressed on the launch page
 @app.route("/chat")
 def home(): 
+	Input.clear() #for when user restarts makes sure the inputs are clear
+	Ques.append("Panckes or waffles?",
+    "What fruit would you want?",
+    "What meat would you like?",  
+    "In the dish, do you want sugar?",
+    "Do you want the dish to be keto?", 
+    "What vegtables would you like?", 
+    "Do  you want a sandwhich?", 
+    "Do you want soup?",  
+    "Do you want the dish cold or hot?",
+    "Do what type of Cusine would you like?(ex. Tex-Mex, Asian, Italian)",
+    "Do you want your meal to be organic?", 
+    "What type of oil would you like to use in the dish? answer as typeoil where type is the oil you want", 
+    "Would you want this made in the oven, microwave, stove, crock-pot or air-fryer?", 
+    "Would do you want a sweet, mild, spicy, or bland dish?")
 	return render_template("ric-bot.html")
 
 
