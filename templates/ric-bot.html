@@ -1,4 +1,6 @@
+nes (75 sloc) 2.75 KB
 <!DOCTYPE html>
+
 <html>
 <title>RIC-BOT</title>
 
@@ -19,15 +21,20 @@
   <div class="boxed">
   <div>
      <div class="float-child">
-       <center><img src="imgs/Logo_2.png" atl="Logo" width="100" height="200"></center>
+       <center>
+            <a href = "{{ url_for('static', filename='Logo_2.png') }}"> 
+		            <img src = "static/Logo_2.png" width="100" height="150"/>
+            </a>
+        </center>
         <div class="instruction">
-          <center><header>Intructions</header></center>
+          <center><header>Instructions</header></center>
           <ul>
             <li>Answer questions with correct spelling</li>
             <li>Some questions are in the form of open ended questions and some are in yes/no format</li>
-            <li>In open ended questions put answers with space ex. "pepper salt" if input is multiworded item do not space out ex. "blackpepper"</li>
+            <li>To make a list for the open ended qusetions, use spaces instead of commas and omit spaces between words of s single item. for example "garlic, salt, black pepper" would be " garlic salt blackpepper</li>
+	    <li>If you do not like any of the options asked you can skip it by by typing "no" or "none" </li>
             <li>To see the results type "results"</li>
-            <li>To restart RIC-BOT type "restart"</li>
+            <li>To restart RIC-BOT press restart button</li>
           </ul>
         </div>
      </div> 
@@ -41,8 +48,10 @@
         </div>
     </div>
   <div id="userInput">
-  <button id="restart" href="/chat">Restart</button> 
   <input id="textInput" type="text" name="msg" placeholder="Enter Response Here" />
+  	<a href="/">
+	  <button>Restart RIC-BOT By Pressing Here</button> 
+	</a>
   </div>
     
   </div>
