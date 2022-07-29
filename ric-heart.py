@@ -17,8 +17,12 @@ Ques = [
     "What vegtables would you like?", 
     "Do  you want a sandwhich?", 
     "Do you want soup?",  
-    "Do you want the dish cold or hot?", 
-    "Would you like soup or sandwhich", 
+    "Do you want the dish cold or hot?",
+    "Do what type of Cusine would you like?(ex. Tex-Mex, Asian, Italian)",
+    "Do you want your meal to be organic?", 
+    "What type of oil would you like to use in the dish? answer as typeoil where type is the oil you want", 
+    "Would you want this made in the oven, microwave, stove, crock-pot or air-fryer?", 
+    "Would do you want a sweet, mild, spicy, or bland dish?", 
     ]
 
 
