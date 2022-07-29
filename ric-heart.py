@@ -1,4 +1,3 @@
-
 #libraries needed for the app
 from flask import Flask, render_template, request
 import flask
@@ -30,7 +29,16 @@ Ques = [
 #Allergy:   input-free
 #Unwanted:  -input
 def checker(x):
-    
+   
+    #if the user doesnt want the question posed it seeks next question
+    if x == "no" or x == "none":
+        #so next question answer will not run through checker()
+        Input.append(" ")
+        #obtaining the next question in the bank and removing it since used 
+        botResponse = Ques[0]
+        Ques.pop(0)
+        return botResponse
+
     #splits the user inputs
     ch = x.split()
 
@@ -92,8 +100,9 @@ def results():
     #Convert list to String
     query = ' '.join(Input) + ' recipe'
     #print out the google search result
-    r = search(query, tld="co.in", num=1, stop=1)
-    return r
+    r = search(query, num_results=1)
+    ans = str(list(r)[0])
+    return ans
     
 
 #loads the Launch page
@@ -115,6 +124,12 @@ def get_bot_response():
     #used for the inital start of the chatbox checking if their is no current inputs saved
     if len(Input) == 0:
         botResponse = checker(userText)
+    #if the user wants the results of the questionaire
+    elif len(Ques) == 0 or userText == "results":
+        botResponse = results()
+
+    elif userText == "results":
+        flask.redirect(flask.url_for("home"))
 
     #for most quesitons open ended and yes/no
     else:
@@ -128,4 +143,3 @@ app.run(
     port=int(os.getenv('PORT', 8080)),
     debug=True
 )
-
