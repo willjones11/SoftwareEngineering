@@ -63,6 +63,7 @@
             var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
             $("#textInput").val("");
             $("#chatbox").append(userHtml);
+            var chat = document.getElementById("messages");
             document
               .getElementById("userInput")
               .scrollIntoView({ block: "start", behavior: "smooth" });
@@ -74,6 +75,7 @@
                 .scrollIntoView({ block: "start", behavior: "smooth" });
             
             });
+	    chat.scrollTop = chat.scrollHeight;
           }
           $("#textInput").keypress(function(e) {
             if (e.which == 13) {
