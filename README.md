@@ -76,6 +76,7 @@ RIC-BOT (Reccomendation Interactive Chatbox). RIC-BOT's objective is to help cli
 <br>
 Are you indecisive? Or are you looking to spice up your life with a new recipe? Then RIC-BOT is for you. RIC-BOT engages the client by asking questions to narrow down and offer a suggestion based on client respones.
 
+Website Link: https://ric-botswe.herokuapp.com/
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Team
