@@ -76,7 +76,8 @@
 	/*Boxing around the User Text*/
   .userText span {
 	display: inline-block;
-	background-color: #4CC417;
+	color: white;
+	background-color: #89216b;
 	padding: 10px;
 	border-radius: 20px;
   }
@@ -91,7 +92,8 @@
   /*boxing in the bot in the chatbox*/
   .botText span {
 	display: inline-block;
-	background-color: #306EFF;
+	background-color: #888888;
+	color:white;
 	padding: 10px;
 	border-radius: 20px;
   }
@@ -122,7 +124,7 @@
   /*for body text creates the font style and gradient animation background*/
   body {
         font-family: serif;
-	background: linear-gradient(-45deg, #5a3f37, #5a3f37, #2c7744, #2c7744);
+	background: linear-gradient(-45deg, #da4453, #da4453, #89216b, #89216b);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100%;
@@ -143,7 +145,8 @@
   /*The Restart Button*/
   button{
         font-size: 15px;
-	padding: 13px; 
+	padding: 13px;
+	color: white;
         margin-top: 10px;
 	margin-left: auto;
 	border-radius: 10px; 
