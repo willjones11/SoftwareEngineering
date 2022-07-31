@@ -28,12 +28,13 @@
         <div class="instruction">
           <center><header>Instructions</header></center>
           <ul>
-            <li>Answer questions with correct spelling</li>
-            <li>Some questions are in the form of open ended questions and some are in yes/no format</li>
-            <li>To make a list for the open ended qusetions, use spaces instead of commas and omit spaces between words of s single item. for example "garlic, salt, black pepper" would be " garlic salt blackpepper</li>
-	    <li>If you do not like any of the options asked you can skip it by by typing "no" or "none" </li>
-            <li>To see the results type "results"</li>
-            <li>To restart RIC-BOT press restart button</li>
+            <li>Answer questions with correct spelling</li><br>
+            <li>Some questions are in the form of open ended questions and some are in yes/no format</li><br>
+            <li>Please respond according and press the "enter" key when finished with the current response</li><br>
+            <li>To make a list for the open ended questions, use spaces instead of commas and omit spaces between words of a single item. For example "garlic, salt, black pepper" would be " garlic salt blackpepper"</li><br>
+	    <li>If you do not like any of the options asked you can skip it by by typing "no" or "none" </li><br>
+            <li>To see the results anytime, type "results"</li><br>
+            <li>To restart RIC-BOT, press restart button</li><br>
           </ul>
         </div>
      </div> 
@@ -46,11 +47,14 @@
   </div>
         </div>
     </div>
-  <div id="userInput">
+  <div id="userInput" style="top:1500px">
   <input id="textInput" type="text" name="msg" placeholder="Enter Response Here" />
   	<a href="/">
-	  <button>Restart RIC-BOT By Pressing Here</button> 
-	</a>
+	    <button>Restart RIC-BOT By Pressing Here</button> 
+  	</a>
+    <a href="mailto:aidamuminbusiness@gmail.com">
+	    <button>Fix a Bug? Have Questions? Click Here</button> 
+  	</a>
   </div>
     
   </div>
@@ -60,6 +64,8 @@
             var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
             $("#textInput").val("");
             $("#chatbox").append(userHtml);
+            var chat = document.getElementById("messages");
+            chat.scrollTop = chat.scrollHeight;
             document
               .getElementById("userInput")
               .scrollIntoView({ block: "start", behavior: "smooth" });
@@ -69,8 +75,9 @@
               document
                 .getElementById("userInput")
                 .scrollIntoView({ block: "start", behavior: "smooth" });
-            
+              chat.scrollTop = chat.scrollHeight;
             });
+	    chat.scrollTop = chat.scrollHeight;
           }
           $("#textInput").keypress(function(e) {
             if (e.which == 13) {
