@@ -122,7 +122,7 @@ The main package needed is flask you can download it using the following command
 - [X] Design Algorithm for Chatbox
 - [X] Design Website Design
 - [X] Create Launch Button
-- [ ] Add Support Section
+- [X] Add Support Section
 - [X] Add Restart Function to Chatbox 
 - [ ] Determine if RIC-BOT can handle bad input
 
