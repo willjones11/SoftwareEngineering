@@ -92,7 +92,8 @@ def results():
     query = ' '.join(Input) + ' recipe'
     #print out the google search result
     r = search(query, num=1, stop=1, pause=1)#trys to extract first result
-    ans = str(list(r)[0])
+    ans = "Here is your result! Copy and paste the link to view: " + str(list(r)[0])
+
     return ans
     
 
@@ -130,7 +131,9 @@ def home():
 @app.route("/get")
 def get_bot_response():
     userText = request.args.get('msg') #intakes the use input 
-    
+    #cleaning input
+    userText = userText.lower()
+
     #used for the inital start of the chatbox checking if their is no current inputs saved
     if len(Input) == 0:
         botResponse = checker(userText)
