@@ -3,7 +3,7 @@
 	text-align: center;
     	color: white;
    	font-style: italic;
-    	background-color: aquamarine;
+    	background-color: #6bab90;
     	font-size: 70px;
   }
   /*Helps create where the the columns of img/instructions and Chatbox*/
@@ -147,6 +147,7 @@
         margin-top: 10px;
 	margin-left: auto;
 	border-radius: 10px; 
+	background-color: #6bab90;
 	display: right;
   }
 
