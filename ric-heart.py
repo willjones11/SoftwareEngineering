@@ -117,7 +117,7 @@ def home():
     "Do you want a sandwhich?", 
     "Do you want soup?",  
     "Do you want the dish to be cold or hot?", 
-    "What type of cusine would you like> ex. Tex-Mex, Asian or type no for no preference", 
+    "What type of cusine would you like? ex. Tex-Mex, Asian or type no for no preference", 
     "Do you want your meal to be organic", 
     "What type of oil would you like to use in the dish? answer as typeoil where type is the oil you want", 
     "Would you want this made in the oven, microwave, stove, grill , crock-pot, or air-fryer", 
